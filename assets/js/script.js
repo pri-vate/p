@@ -157,3 +157,14 @@ for (let i = 0; i < navigationLinks.length; i++) {
 
   });
 }
+
+
+
+ if(localStorage.getItem('visitorCount') === null) {
+  localStorage.setItem('visitorCount', 1);
+} else {
+  let currentCount = parseInt(localStorage.getItem('visitorCount'));
+  localStorage.setItem('visitorCount', currentCount + 1);
+}
+
+document.getElementById('visitorCount').innerText = `Number of visits: ${localStorage.getItem('visitorCount')}`;
